@@ -1,0 +1,8 @@
+{
+    "version": "0.0.1.0",
+    "private_key": "36e1aa979f98c7154fb2491491ec044ccac099651209ccfbe2561746dbe29ebb",
+    "parent_address": "9b9b7cea3f4cb8dd4553724abcc1d5577987f662",
+    "parent_connection_address": "35.243.233.132:6011",
+    "parent_connection_type": "node",
+    "transaction_fee": "01"
+}

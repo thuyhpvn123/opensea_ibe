@@ -1,0 +1,44 @@
+[submodule "proto"]
+	path = proto
+	url = git@gitlab.com:meta-node/proto.git
+	branch = main
+
+[submodule "cmd/validator"]
+	path = cmd/validator
+	url = git@gitlab.com:meta-node/validator.git
+	branch = main
+
+[submodule "cmd/node"]
+	path = cmd/node
+	url = git@gitlab.com:meta-node/node.git
+	branch = main
+
+[submodule "cmd/miner"]
+	path = cmd/miner
+	url = git@gitlab.com:meta-node/miner.git
+	branch = main
+
+[submodule "pkg/mvm/c_mvm"]
+	path = pkg/mvm/c_mvm
+	url = git@gitlab.com:meta-node/metanode-virtual-machine.git
+	branch = main
+
+
+[submodule "cmd/client"]
+	path = cmd/client
+	url = git@gitlab.com:meta-node/client.git
+	branch = main
+
+[submodule "cmd/storage"]
+	path = cmd/storage
+	url = git@gitlab.com:meta-node/storage.git
+	branch = main
+
+[submodule "cmd/explorer"]
+	path = cmd/explorer
+	url = git@gitlab.com:meta-node/explorer.git
+	branch = main
+
+[submodule "cmd/desktop_service"]
+	path = cmd/desktop_service
+	url = git@gitlab.com:meta-node/desktop-service.git

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <link type= "text/css" rel="stylesheet" href="style.css"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Test</title>
+    <!-- <link rel="stylesheet" href="/css/style_Swap.css"> -->
+    <link rel="stylesheet" href="../frontend/css/style_Swap.css"  >
+    <!-- CDN qrcodejs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+        integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <style>
+        * {
+        box-sizing: border-box;
+        }
+
+        .row {
+        display: flex;
+        }
+
+        .collumn{
+        flex: 50%;
+        padding: 5px;
+        }
+
+        
+    </style>
+
+</head>
+<body>   
+    <main class="main">
+        <!-- <h2>Toggleable Pills</h2> -->
+        <div class="container">
+          <br>
+          <!-- Nav pills -->
+          <ul class="nav nav-pills" role="tablist">
+            <li class="nav-item1">
+              <a class="nav-link active" data-toggle="pill" href="#home">Create</a>
+            </li>
+            <li class="nav-item2">
+              <a class="nav-link" data-toggle="pill" href="#menu1" id="stakingTab">My Collection</a>
+              <h2></h2>
+            </li>
+            <li class="nav-item3">
+              <a class="nav-link" data-toggle="pill" href="#menu2" id="compoundTab">Market</a>
+            </li>
+    
+          </ul>
+        
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div id="home" class="container tab-pane active"><br>
+                <div class="head-section">
+                    <div id="create">
+                        <p>Address:                           
+                            <span id="wallet-id-user">2ef033c8b483eee372f2d157947e623eee1a4037</span>
+                        </p>
+                        <div class="token-container">
+                            <div>
+                                <div>
+                                    <form
+                                        id="form"
+                                        enctype="multipart/form-data"
+                                        action="/upload"
+                                        method="POST"
+                                        >
+                                        <div class="form-group">
+                                            <label for="name">Name</label>
+                                            <input id="name" type="text" class="form-control"></input>
+                                            <span class="error error_name"></span>
+                                            <label for="description">Description</label>
+                                            <input id="description" type="text" class="form-control"></input>
+                                            <span class="error error_description"></span>
+                                            <label for="fee">Fee</label>
+                                            <input id="Fee" type="text" class="form-control"></input>
+                                            <span class="error error_fee"></span>                           
+                                        </div>
+                                        <input class="input file-input" type="file"  name="file" multiple />
+                                        <button id='information' type="submit" class="btn btn-primary" >Submit</button>
+                                        <p id="create-result"></p>
+                                    </form>
+
+                                </div>                           
+                            </div>                   
+                        </div>           
+                    </div>           
+                </div>           
+            </div> 
+            <!-- Farm Tab-->
+            <div id="menu1" class="container tab-pane fade"><br> 
+            </div>
+            <!-- Compound Tab-->
+            <div id="menu2" class="container tab-pane fade"><br>
+            </div>           
+          </div>
+        </div>
+    
+    </main>           
+      <!-- </script> -->
+
+      <script type="application/javascript" src="../frontend/js/Websocket.js"></script>
+
+</body>
+</html>
