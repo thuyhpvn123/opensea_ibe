@@ -25,6 +25,7 @@ type IReceipt interface {
 	GetFromAddress() common.Address
 	GetToAddress() common.Address
 	GetAmount() *uint256.Int
+	GetReturn() []byte
 	GetStatus() pb.RECEIPT_STATUS
 	GetAction() pb.ACTION
 	GetGasUsed() uint64
@@ -151,3 +152,7 @@ func (r *Receipt) GetStatus() pb.RECEIPT_STATUS {
 func (r *Receipt) GetAction() pb.ACTION {
 	return r.proto.Action
 }
+func (r *Receipt) GetReturn() []byte {
+	return  (r.proto.Return)
+}
+

@@ -24,6 +24,8 @@ type ISocketServer interface {
 	SetKeyPair(*bls.KeyPair)
 
 	HandleConnection(IConnection) error
+	GetHandler() chan interface{}
+
 }
 
 type SocketServer struct {
@@ -51,7 +53,11 @@ func NewSockerServer(
 	s.ctx, s.cancelFunc = context.WithCancel(context.Background())
 	return s
 }
-
+func (s *SocketServer) GetHandler() chan interface{}{
+	return s.handler.GetChData()
+		
+	
+}
 func (s *SocketServer) Listen(listenAddress string) error {
 	publicConnectionAddress := s.config.GetPublicConnectionAddress()
 	var err error
