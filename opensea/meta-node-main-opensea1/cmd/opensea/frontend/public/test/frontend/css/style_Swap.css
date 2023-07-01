@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.head-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+button {
+  cursor: pointer;
+}
+
+#swap,
+#log-container {
+  min-width: 300px;
+  font-size: 15px;
+}
+
+#swap {
+  width: 50%;
+}
+
+#log-container {
+  width: 80%;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+}
+
+#swap .token-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+}
+
+#swap .token-container .logo {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+}
+
+#swap .token-container .token-name {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+#swap .token-container input {
+  margin: 5px 0;
+  padding: 3px 3px;
+  font-size: 20px;
+}
+
+/* #swap .button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} */
+
+/* #swap .button-container > div:first-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+} */
+
+/* #swap .button-container .approve-button {
+  width: 48%;
+  display: block;
+  background-color: #33cc33;
+  color: #e6e6e6;
+} */
+#swap .button-container #approve-btn {
+  background-color: green;
+  color: #fff;
+  display: block;
+  width: 100%;
+  min-width: 50px;
+  margin-top: 30px;
+}
+#swap .button-container .swap-button {
+  margin-top: 30px;
+  display: block;
+  width: 100%;
+  min-width: 50px;
+  background-color: green;
+  color: #fff;
+}
+
+/* #swap .button-container #approve-btn {
+  background-color: green;
+  margin-top: 30px;
+  display: block;
+  width: 100%;
+  min-width: 100px;
+  color: #fff;
+}
+ */
+.button-container button {
+  font-size: 20px;
+  padding: 10px 0;
+}
+
+/* Swap */
+
+/* ! Đang gấp nên chưa style được */
+
+/* Log Container */
+#log-container h4 {
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+/* QR Container */
+#qrcode-section {
+  width: 30%;
+  height: 100%;
+  text-align: center;
+}
+
+#qrcode-section .qrcode#qrcode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  border: solid 1px #000;
+}
+
+#qrcode-section .reset-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-weight: 700;
+  background-color: #000099;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+.error , #notice {
+  font-size:13px;
+  font-style: italic;
+  color: red;
+}
+
+#swap .button-container #remove-btn,#add-btn {
+  background-color: yeallow;
+  color: #ffffff;
+  display: block;
+  width: 100%;
+  min-width: 100px;
+  margin-top: 30px;
+}
+#swap .button-container > div:first-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#swap .button-container #approve-a-btn,#approve-b-btn{
+  background-color: yeallow;
+  color: #ffffff;
+  display: block;
+  width: 50%;
+  min-width: 100px;
+  margin-top: 30px;
+}

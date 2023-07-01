@@ -1,0 +1,85 @@
+\documentclass [10pt, fancyhdr, twoside] {article}
+\usepackage{float, graphicx, caption, amssymb, natbib}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{tabulary}
+\usepackage [left=2.5cm, top=2.5cm, bottom=2.5cm, right=3cm] {geometry}  %% see geometry.pdf on how to lay out the page. There's lots.
+\geometry{a4paper} %% or letter or a5paper or ... etc
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage[scaled]{helvet}
+\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+
+\usepackage[left]{lineno}
+\usepackage[yyyymmdd,hhmmss]{datetime}
+
+
+
+\pagestyle{fancy}
+
+\fancyhead{}
+\fancyfoot{}
+
+\fancyhead[RO,LE]{MetaNode}
+\fancyfoot[RO,LE]{Page-\thepage}
+\fancyfoot[C]{\textbf{Footer}}
+\fancyfoot[RE, LO]{Created: \today\ at \currenttime}
+
+\usepackage{blindtext}
+
+\newcounter {note}
+\stepcounter{note}
+
+\renewcommand{\abstractname}{Abstract}
+
+
+\begin{document}
+
+\title{MetaNode}
+\author {Phan Dinh Minh Hieu}
+
+\date{\today}
+
+\maketitle
+
+\begin{abstract}
+This paper proposes a new blockchain architecture base on Proof of Stake(POS) with a new mining block technic using mobile devices.
+By precalculating, MetaNode can reduce the cost of electing a new leader in POS and make use of mobile devices as miners help MetaNode have
+great scalability and attractiveness in the market. Using BLS signing method also reduces the cost of verifying sign by aggregate multiple sign into one.
+Inherit EVM MetaNode introduces MVM which can run on multiple platforms at high speed to execute smart contracts. 
+\end{abstract}
+
+\section{Introduction}
+\blindtext
+
+\section{Network design}
+MetaNode doesn't use a single node type for all tasks but is split into multiple node types. Each node's responsible for a specific task.
+\subsection{Figure}
+\subsection{Validator}
+Unlike other blockchains, MetaNode's Validators don't responsible for verifying transactions but mainly for complete consensus.
+There are 101 validators in MetaNode blockchain by selecting from the staking pool (account zero). Based on staking amount, validators will be selected to become the leader, which is responsible
+to create and broadcasting blocks to other validators.
+\subsection{Multiple level node}
+Nodes are hardware used to receive, forward and verify transaction data(exclude sign). MetaNode is designed to have multiple-level nodes to improve scalability. One node can have multiple child nodes, but only have one parent(which can be a node
+or a validator )
+\subsection{Verify Miner}
+Verify sign is a costly method but is needed in a blockchain system for identifying accounts. MetaNode improves this by assigning this task to Verify Miner. Verify Miner could be mobile or any device that meets requirements.
+Users will have to install mining dapp and stake to a node to become verify miner. Complete verify transactions will receive reward make running mining app become attractive and help MetaNode more secure.
+\subsection{Execute Miner}
+Like verifying transaction signs, executing smart contracts also is a costly function that mainly decreases the throughput of a blockchain.
+Execute miners appear to solve this problem. Devices that are able to run MVM will able to become execute miner. Complete execute transactions will receive reward.
+\subsection{Storage}
+One of the main problems in the existing blockchain system is storage, saving too much data make blockchain costly and hard to scale. MetaNode make data storage flexible by introduce storage node.
+The storage node will responsible for saving smart contract data. Smart contract creators can specify which storage node they want to use to run smart contract.
+The Storage node has to return valid data that will be reverified by miners to execute smart contracts.
+
+\section{Account Chain}
+The account states in MetaNode are saved in nodes and validators. But the data saved are just enough to verify. Transactions detail will be self-saving by clients to create an account chain in their device.
+This help reduces the store size of MetaNode and improves privacy.
+\section{Consensus}
+MetaNode uses Proof of Stake for consensus. One small improvement is precalculating leader slots, MetaNode can skip voting leader time between each block.
+Consensus happend in all node level and validator level. 
+\section{Transaction}
+\section{MetaNode Virtual Machine(MVM)}
+
+
+\end{document}
