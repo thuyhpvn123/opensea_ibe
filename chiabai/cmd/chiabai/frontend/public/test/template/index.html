@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <link type= "text/css" rel="stylesheet" href="style.css"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Test</title>
+    <!-- <link rel="stylesheet" href="/css/style_Swap.css"> -->
+    <link rel="stylesheet" href="../frontend/css/style_Swap.css"  >
+    <!-- CDN qrcodejs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+        integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <style>
+        * {
+        box-sizing: border-box;
+        }
+
+        .row {
+        display: flex;
+        }
+
+        .collumn{
+        flex: 50%;
+        padding: 5px;
+        }
+
+        
+    </style>
+
+</head>
+<body>  
+  <header>
+    <div class="container bg-light ">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">          
+          <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+            
+                  <!--Register Participant Modal  -->
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" >
+                      <!-- Button to Open the Modal -->
+            <button type="button" class="btn btn-primary m-t-20" data-toggle="modal" data-target="#myModal">
+              Connect Wallet
+            </button>
+          
+            <!-- The Modal -->
+            <div class="modal" id="myModal">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title">Wallet</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                    <form id="register">
+                      <div class="form-group">
+                        <label for="address">Address</label>
+                        <input id="address" type="text" class="form-control"></input>
+                        <span class="error error_address"></span>
+                      </div>
+                      <div class="form-group">
+                          <label for="prikey">Private Key</label>
+                          <input id="prikey" type="text" class="form-control"></input>
+                          <span class="error error_prikey"></span>
+                      </div>
+                        <button id='btnRegister' type="submit" class="btn btn-primary" >Submit</button>
+                        <p id="create-result"></p>
+                    </form>
+                  </div>
+                  
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger" data-dismiss="modal">Close</button>
+  
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </header> 
+    <main class="main">
+        <!-- <h2>Toggleable Pills</h2> -->
+        <div class="container">
+          <br>
+          <!-- Nav pills -->
+          <ul class="nav nav-pills" role="tablist">
+            <li class="nav-item1">
+              <a class="nav-link active" data-toggle="pill" href="#home">Create</a>
+            </li>
+            <li class="nav-item2">
+              <a class="nav-link" data-toggle="pill" href="#menu1" id="stakingTab">My Collection</a>
+              <h2></h2>
+            </li>
+            <li class="nav-item3">
+              <a class="nav-link" data-toggle="pill" href="#menu2" id="compoundTab">Market</a>
+            </li>
+    
+          </ul>
+        
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div id="home" class="container tab-pane active"><br>
+                <div class="head-section">
+                    <div id="create">
+                        <p>Address:                           
+                            <span id="wallet-id-user"></span>
+                        </p>
+                        <div class="token-container">
+                            <div>
+                                <div>
+                                  <!-- <form
+                                  id="file"
+                                  enctype="multipart/form-data"
+                                  action="/upload"
+                                  method="POST"
+                                  > -->
+                                    <input type="file" name="file" id="file"/>
+                                  <!-- </form> -->
+                                    <!-- <form  action="/upload" method="post" enctype="multipart/form-data" >
+                                        <input type="file" onchange="this.form.submit();return false" name="file" id="upload"/>
+                                    </form> -->
+                                    <div class="tab-content">
+                                        <!-- Sessions Tab -->
+                                        <div id="home" class="container tab-pane active"><br>
+                                          <div class="container">
+                                            <div class="row">
+                                              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+                                                <div class="product">
+                                                  <!-- Image Here -->
+                                                </div>
+                                              </div> 
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                    <form
+                                        id="information"
+                                        enctype="multipart/form-data"
+                                        action="/createNft"
+                                        method="POST"
+                                        >
+                                        <div class="form-group">
+                                          <!-- <input type="file" name="file" id="files"/> -->
+                                            <div>
+                                                <label for="name">Name</label>
+                                                <input id="name" type="text" class="form-control"></input>
+                                                <span class="error error_name"></span>    
+                                            </div>
+                                            <div>
+                                                <label for="description">Description</label>
+                                                <input id="description" type="text" class="form-control"></input>
+                                                <span class="error error_description"></span>    
+                                            </div>
+                                            <div>
+                                                <label for="trait_type">Trait Type</label>
+                                                <input id="trait_type" type="text" class="form-control"></input>
+                                                <span class="error error_trait_type"></span>     
+                                            </div>
+                                            <div>
+                                                <label for="value">Value</label>
+                                                <input id="value" type="number" class="form-control"></input>
+                                                <span class="error error_value"></span>     
+                                            </div>
+                                            <div>
+                                                <label for="max_value">Max Value</label>
+                                                <input id="max_value" type="number" class="form-control"></input>
+                                                <span class="error error_max_value"></span> 
+    
+                                            </div>
+                                            <button  type="submit" class="btn btn-primary"  >Submit</button> 
+                              
+                                        </div>
+                                        <!-- <input class="input file-input" type="file"  name="file" multiple /> -->
+                                    </form>
+                                    <p id="create-result-call"></p>
+                                    <p id="result-call"></p>
+                                </div>                           
+                            </div>                   
+                        </div>           
+                    </div>           
+                </div>           
+            </div> 
+            <!-- Farm Tab-->
+            <div id="menu1" class="container tab-pane fade"><br> 
+            </div>
+            <!-- Compound Tab-->
+            <div id="menu2" class="container tab-pane fade"><br>
+            </div>           
+          </div>
+        </div>
+    
+    </main>           
+      <!-- </script> -->
+
+      <script type="application/javascript" src="../frontend/js/Websocket.js"></script>
+
+</body>
+</html>
